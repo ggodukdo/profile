@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>개인 프로필 링크 | 홍길동</title>
+        <!-- SEO 친화적 메타태그 -->
+        <meta name="description" content="홍길동의 모든 소셜, 포트폴리오, 연락처를 한 곳에!">
+        <meta property="og:title" content="홍길동 프로필 링크">
+        <meta property="og:description" content="홍길동의 모든 소셜, 포트폴리오, 연락처를 한 곳에!">
+        <meta property="og:image" content="https://placehold.co/180x180">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="profile-main-container">
+            <!-- 회원가입/로그인 영역 (MVP용 간단 폼) -->
+            <section class="auth-section">
+                <form id="authForm">
+                    <input type="email" id="authEmail" placeholder="이메일" required>
+                    <input type="password" id="authPassword" placeholder="비밀번호" required>
+                    <button type="submit" id="loginBtn">로그인</button>
+                    <button type="button" id="signupBtn">회원가입</button>
+                    <button type="button" id="logoutBtn" style="display:none;">로그아웃</button>
+                </form>
+            </section>
+            <header class="profile-header">
+                <div class="profile-editable">
+                    <img src="https://placehold.co/180x180" alt="프로필 사진" class="profile-picture" id="profilePicture">
+                    <input type="file" id="profilePicInput" style="display:none;">
+                    <button onclick="document.getElementById('profilePicInput').click();" class="edit-btn">사진 변경</button>
+                </div>
+                <div class="profile-info-editable">
+                    <input type="text" id="profileName" value="홍길동" class="profile-name-input">
+                    <input type="text" id="profileBio" value="안녕하세요! 프론트엔드 개발자 홍길동입니다." class="profile-bio-input">
+                    <input type="text" id="profileBgUrl" placeholder="배경 이미지 URL (선택)">
+                </div>
+            </header>
+            <section class="profile-theme-section">
+                <label>테마:
+                    <select id="themeSelect">
+                        <option value="default">기본</option>
+                        <option value="dark">다크</option>
+                        <option value="pastel">파스텔</option>
+                    </select>
+                </label>
+                <label>폰트:
+                    <select id="fontSelect">
+                        <option value="Pretendard">Pretendard</option>
+                        <option value="Noto Sans KR">Noto Sans KR</option>
+                        <option value="Arial">Arial</option>
+                    </select>
+                </label>
+                <label>포인트 색상:
+                    <input type="color" id="colorSelect" value="#007bff">
+                </label>
+            </section>
+            <section class="profile-links-section">
+                <h2>나의 링크</h2>
+                <ul id="linksList">
+                    <!-- 동적 생성 -->
+                </ul>
+                <button class="add-link-btn" id="addLinkBtn">+ 링크 추가</button>
+            </section>
+            <section class="profile-analytics-section">
+                <h2>방문자/클릭 통계</h2>
+                <div class="analytics-box">
+                    <div>총 방문자: <span id="visitorCount">0</span></div>
+                    <div>총 클릭: <span id="clickCount">0</span></div>
+                </div>
+            </section>
+            <section class="profile-qr-section">
+                <h2>QR 코드</h2>
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://mywebsite.com" alt="QR 코드" class="profile-qr-img" id="qrImg">
+                <button class="download-qr-btn" id="downloadQrBtn">QR 다운로드</button>
+            </section>
+            <section class="profile-preview-section">
+                <button id="previewBtn">미리보기</button>
+            </section>
+            <footer class="profile-footer">
+                <p>© 2025 홍길동. All rights reserved.</p>
+            </footer>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
